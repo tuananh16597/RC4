@@ -26,7 +26,7 @@ class RC4Controller extends Controller
     }
     $ciphertext = rc4( $key, $data );
     //save data;
-    $filename = date('Y-m-d H:i:s') . "enc." . $extension;
+    $filename = date('YmdHis') . "enc." . $extension;
     $my_file = '../uploads/' . $filename;
     $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
     fwrite($handle, $ciphertext);
@@ -48,7 +48,7 @@ class RC4Controller extends Controller
     }
     $decrypted = rc4( $key, $data );
     //save data;
-    $filename = date('Y-m-d H:i:s') . "dec."   . $extension;
+    $filename = date('YmdHis') . "dec."   . $extension;
     $my_file = '../uploads/' . $filename;
     $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
     fwrite($handle, $decrypted);
